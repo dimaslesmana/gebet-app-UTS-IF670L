@@ -1,7 +1,14 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+
+import UsersContextProvider from './context/UsersContextProvider';
+
+import SideMenu from './components/SideMenu';
+
+import CalonGebetan from './pages/CalonGebetan';
+import TargetGebetan from './pages/TargetGebetan';
+import Profile from './pages/Profile';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -21,18 +28,21 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import './theme/custom.css';
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
+      <SideMenu />
+      <UsersContextProvider>
+        <IonRouterOutlet id="main">
+          <Route exact path="/target-gebetan" component={TargetGebetan} />
+          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/" component={CalonGebetan} />
+
+          {/* <Redirect exact path="/" to="/calon-gebetan" /> */}
+        </IonRouterOutlet>
+      </UsersContextProvider>
     </IonReactRouter>
   </IonApp>
 );

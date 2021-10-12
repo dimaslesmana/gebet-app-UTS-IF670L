@@ -1,0 +1,21 @@
+:root {
+  --ion-font-family: 'Lato', sans-serif;
+}
+
+ion-loading.loading {
+  --background: none;
+  --min-width: 100%;
+  --min-height: 100%;
+  --spinner-color: var(--ion-color-light-tint);
+}
+
+ion-toast {
+  --max-width: 90%;
+  --border-radius: 2px;
+  top: -12px;
+  text-align: center;
+}
+
+ion-action-sheet.actionSheet {
+  --color: var(--ion-color-secondary);
+}

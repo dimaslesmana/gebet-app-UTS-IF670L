@@ -1,0 +1,29 @@
+.list {
+  padding: 0px;
+  background: none;
+}
+
+.list .item {
+  margin: 12px 0px;
+  padding: 0px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px 0 rgba(var(--ion-color-tertiary-rgb), 0.4);
+}
+
+.list .item .label {
+  padding: 4px;
+}
+
+.list .item .label h2 {
+  margin-bottom: 4px;
+}
+
+.list .item .label p {
+  color: var(--ion-color-medium);
+}
+
+.list .item .label p .genderIcon {
+  font-size: 1.25em;
+  margin-bottom: -4px;
+  margin-right: 2px;
+}
